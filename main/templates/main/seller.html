@@ -11,7 +11,7 @@
             <div class="container">
                 <div class="row selling">
                     <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12 sell">
-                        <h1>Post your AD</h1>
+                        <h1>Donate Here</h1>
                          <form action="{% url 'main:seller' %}" method='POST' enctype="multipart/form-data">
                            {% csrf_token %}
                             <div class="form-group">
@@ -25,11 +25,7 @@
                             <input type="text" class="form-control" id="productdescritpion" name="description"required placeholder="Enter your product description here">
                           </div>
 
-                          <div class="form-group">
-                                <label for="description" >Product Price:</label>
-                                <input type="text" class="form-control" id="productprice" name="price" pattern="[0-9]{}" required placeholder="Enter your product price here">
-                         </div>
-                            
+                          
                          <div class="form-group">
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Category: </label>
                             <select required class="custom-select mr-sm-2" name="category" id="category">
@@ -78,7 +74,7 @@
 
                                 </div>
                               </div>
-                              <button class="btn btn-primary" type="submit">Post Ad</button>
+                              <button class="btn btn-primary" type="submit">Donate</button>
 
                          </form>
                     </div>

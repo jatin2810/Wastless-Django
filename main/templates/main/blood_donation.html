@@ -1,42 +1,57 @@
 {% extends 'main/base.html' %}
   {% load static %}
    {% block css%}
-      <link rel ="stylesheet" href= "{% static 'css/Recyclables.css' %}" >
+      <link rel ="stylesheet" href= "{% static 'css/seller.css' %}" >
   {% endblock%} 
   {% block content %}
         
         
-        
-    
       <div style='min-height: 100%;position:relative;padding:0px;'>
-          
-            
-                <div class="container">
+         
+            <div class="container">
                 <div class="row selling">
                     <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12 sell">
-                        <h1>Goods</h1>
-                         <form action="{% url 'main:recycle' %}"method='POST' enctype="multipart/form-data">
+                        <h1>Post your AD</h1>
+                         <form action="{% url 'main:seller' %}" method='POST' enctype="multipart/form-data">
                            {% csrf_token %}
+                            <div class="form-group">
+                             <label for="productname">Product Name:</label>
+                             <input type="text" class="form-control" id="productname" name="name" required placeholder="Enter your product name here">
+                           </div>
+
 
                           <div class="form-group">
-                            <label for="description">Goods Description:</label>
-                            <textarea type="text" class="form-control" row="1" name="description" id="productdescritpion" required placeholder="Enter good description here"></textarea>
+                            <label for="description">Product Description:</label>
+                            <input type="text" class="form-control" id="productdescritpion" name="description"required placeholder="Enter your product description here">
                           </div>
 
                           <div class="form-group">
-                                <label for="description" >Approximate Quantity:</label>
-                                <input type="text" class="form-control" name="quantity" id="productprice" required placeholder="Enter approx quantity of goods">
-                                <small  class="form-text text-muted">Example: 10 masks</small>
-
+                                <label for="description" >Product Price:</label>
+                                <input type="text" class="form-control" id="productprice" name="price" pattern="[0-9]{}" required placeholder="Enter your product price here">
                          </div>
                             
+                         <div class="form-group">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Category: </label>
+                            <select required class="custom-select mr-sm-2" name="category" id="category">
+                                <option selected value="">Choose your product category</option>
+                                <option value="books">Books</option>
+                                <option value="electronic">Electronic Items</option>
+                                <option value="sports">Sports</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="stationary">Stationary</option>
+                                <option value="furniture">Furniture</option>
+                                <option value="furniture">Daily Use</option>
+                                <option value="others">Others</option>
+                              </select>
+                        <!-- </form> -->
+                    </div>
                         
                     <div class="form-group">
                         <label for="address">Upload Images:</label>
                         <div class="form-group">
-                        <input type="file" name="image1" accept="image/*" required>
-                        <input type="file" name="image2" accept="image/*">
-                        <input type="file" name="image3" accept="image/*">
+                        <input type="file"  accept="image/*" name="image1" required>
+                        <input type="file"  accept="image/*" name="image2">
+                        <input type="file"  accept="image/*" name="image3">
                         </div>
                         <small id="emailHelp" class="form-text text-muted">You may upload multiple images</small>
                     </div>
@@ -63,7 +78,7 @@
 
                                 </div>
                               </div>
-                              <button class="btn btn-success" type="submit">Donate</button>
+                              <button class="btn btn-primary" type="submit">Post Ad</button>
 
                          </form>
                     </div>
@@ -71,14 +86,14 @@
             </div>
              
 
-          
 
       </div>
 
 
-
+{% endblock %}
               
                             
   
                 
-  {% endblock %}
+  
+  

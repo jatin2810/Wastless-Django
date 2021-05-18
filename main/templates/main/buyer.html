@@ -6,9 +6,10 @@
   {% endblock%} 
   {% block content %}
    <br>
+
+    <div style="width:80%;margin: auto;">
       <div style='min-height: 100%;position:relative;padding:0px;'class='d-flex flex-column justify-content-center '>
        
-         
             <div class="search">
               <button id="click" onclick="myFunction()"><img class="searchimg" src="{%static 'images/search.jpg' %}" onclick="myFunction()"></button>
               <input type="text" id="myInput"  placeholder="Search for products" title="Type in a name" >
@@ -29,7 +30,6 @@
                 </div>
                 <div class="description">
                     <p class="good">{{item.name}}</p> 
-                    <p style="font-size:12px;color:green;">{{item.price}}</p>
                     <a class="btn btn-success"  href="{% url 'main:product'  pk=item.pk %}"> Proceed</a>
                 </div>
             </div>
@@ -39,9 +39,10 @@
             </ul>
             </div>
   
-
+          </div>
       </div>
        {% endblock %}
+
      {% block scripts %}
       <script type="text/javascript" src="{% static 'js/search.js' %}"></script>
       

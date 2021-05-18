@@ -25,6 +25,11 @@ def productview(request,pk):
 		product=Product.objects.filter(pk=pk).first()
 		return render(request,'main/productdescription.html',{'product':product})
 
+
+@login_required
+def fundraisingview(request):
+	return render(request,'main/fund_donation.html')
+
 @login_required
 def sellerview(request):
 	if request.method=='GET':
@@ -32,7 +37,7 @@ def sellerview(request):
 	else:
 		seller=request.user
 		name=request.POST.get('name')
-		price=request.POST.get('price')
+		price=0
 		description=request.POST.get('description')
 		phone_number=request.POST.get('phone_number')
 		category=request.POST.get('category')

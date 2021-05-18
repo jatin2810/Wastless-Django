@@ -16,5 +16,6 @@ urlpatterns = [
     path('goods',views.goodsview,name='goods'),
     path('userprofile',views.userprofileview,name='userprofile'),
     path('delete/<int:pk>',views.deleteview,name='delete'),
+    path('fundraising',views.fundraisingview,name='fundraising'),
 
 ]

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
 body,html
     {
-    background-color: rgb(240,240,240);
+    background-color: #87FC93 !important;
     height:100%;
     padding:0px;
     margin:0px;
@@ -11,7 +11,7 @@ body,html
     margin:auto;
     margin-top:20px;
     border-radius:55px;
-    background:black !important;
+    background:#28a745 !important;
     width:70%;
     }
 .customNav p 
@@ -50,7 +50,7 @@ body,html
     }
 .bottom
     {
-    background:black;
+    background:#28a745;
     position: absolute;
     bottom:0px;
     width:100%;
@@ -125,6 +125,7 @@ body,html
     padding:20px;
     margin:10px;
     background:white;
+    color :#28a745;
     border-radius:15px;
     transition-property: background;
     transition-duration:1s !important;
@@ -155,7 +156,7 @@ body,html
     }
 .card:hover
     {
-    background:black;
+    background:#28a745;
     cursor: pointer;
     }
 .card:hover i,.card:hover p,.card:hover h5

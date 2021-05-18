@@ -13,7 +13,7 @@ CATEGORY = (
 ('other','other')
 )
 
-class Product(models.Model):
+class Product(models.Model):   #model for the goods user post on our website
 	seller = models.ForeignKey(User,on_delete=models.CASCADE)
 	phone_number=models.IntegerField()
 	name = models.CharField(max_length=20)
@@ -38,7 +38,7 @@ NGO_NAME = (
 ('NGO2','NGO2'),
 )
 
-class Donate(models.Model):
+class Donate(models.Model):  #model for donation of NGO
 	donator = models.ForeignKey(User,on_delete=models.CASCADE)
 	phone_number=models.IntegerField()
 	quantity = models.CharField(max_length=300)
@@ -55,3 +55,36 @@ class Donate(models.Model):
 
 	def __str__(self):
 		return self.donator.username
+
+BLOOD_GROUP =(
+	('A+','A+'),
+	('A-','A-'),
+	('AB+','AB+'),
+	('AB-','AB-'),
+	('O+','O+'),
+	('O-','O-')
+)
+
+# class Blood(models.Model):    #model for blood donation data
+# 	donator = models.ForeignKey(User,on_delete=models.cascade)
+# 	phone_number=models.IntegerField()
+# 	blood_group=models.CharField(max_length=10,choices=BLOOD_GROUP)
+# 	address = models.CharField(max_length=100)
+
+
+
+# 	def __str__(self):
+# 		return self.donator.username + str(self.blood_group)
+
+
+
+# class Plasma(models.Model):    #model forplasma donation data
+# 	donator = models.ForeignKey(User,on_delete=models.cascade)
+# 	phone_number=models.IntegerField()
+# 	blood_group=models.CharField(max_length=10,choices=BLOOD_GROUP)
+# 	address = models.CharField(max_length=100)
+
+
+
+# 	def __str__(self):
+# 		return self.donator.username + str(self.blood_group)

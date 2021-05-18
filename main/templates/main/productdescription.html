@@ -50,11 +50,7 @@
                                    </div>  
                               </div>  
                               <br>  
-                              <div class="row prodprice">  
-                                   <div class="col-md-12 bottom-rule"> 
-                                                <h3 class="product-price" style="color:green;font-size:1.2em;">{{product.price}}</h3> 
-      								</div>
-   								</div> 
+                               
    								<br>
    							<div class="row prodprice">  
                                    <div class="col-md-12 bottom-rule"> 
@@ -64,7 +60,7 @@
    </div>   
      <div class="productbutt"> 
    
-    <button type="button" id="buy" class="btn btn-primary buy">Buy Now</button> 
+    <button type="button" id="buy" class="btn btn-primary buy">Get Details</button> 
      </div>  
      </div>
 
@@ -82,7 +78,7 @@
 	cancel.innerText = 'Cancel Request';
 	let details = document.createElement('button');
 	details.setAttribute('class','btn btn-info');
-	details.innerText = 'Contact Seller';
+	details.innerText = 'Contact Donor';
 
 	butt.addEventListener('click',removeMe);
 	details.addEventListener('click',giveDetails);
